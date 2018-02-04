@@ -1,34 +1,39 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getComics } from '../utils/api'
+import { getCharacters } from '../utils/api'
 import * as actions from '../actions'
 import Header from './Header'
 import './App.css'
+import charactersLogo from '../assets/characters.png'
 import ComicCard from './ComicCard'
 
 class App extends Component {
   state = {}
 
   componentDidMount() {
-    getComics()
-      .then(comics => this.props.getAllComics(comics))
+    getCharacters()
+      .then(characters => this.props.getAllCharacters(characters))
   }
 
   render() {
-    const { comics } = this.props
+    const { characters } = this.props
     return (
       <div className="App">
         <Header />
+        <div className="characters-heading">
+          <img className="charactersLogo" src={charactersLogo} alt="" />
+          <h1>Characters</h1>
+        </div>
         <section>
           <article className="comics-container">
             {
-          comics && comics.map(comic => (
+          characters && characters.map(comic => (
             <ComicCard key={comic.id} comic={comic} />
           ))
         }
           </article>
-          <aside>
+          <aside className="aside-container">
             aside content
           </aside>
         </section>
@@ -37,9 +42,9 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ comics }) => (
+const mapStateToProps = ({ characters }) => (
   {
-    comics: comics && comics.data && comics.data.results,
+    characters: characters && characters.data && characters.data.results,
   }
 )
 

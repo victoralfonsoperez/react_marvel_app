@@ -1,0 +1,9 @@
+a {
+    background-color: var(--red);
+    color: var(--white);
+    display: block;
+    margin-top: var(--default-font-size);
+    padding: var(--default-font-size);
+    text-decoration: none;
+    width: fit-content;
+}

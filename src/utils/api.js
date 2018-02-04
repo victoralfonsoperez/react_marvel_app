@@ -14,8 +14,8 @@ const headers = {
   Accept: '*/*',
 }
 
-export const getComics = () =>
-  axios.get(`${api}comics`, {
+export const getCharacters = () =>
+  axios.get(`${api}characters`, {
     params,
     headers,
   })

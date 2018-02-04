@@ -26,11 +26,13 @@
 }
 
 .search {
+    border: none;
+    border-radius: 4px;
     display: flex;
     flex: 1;
-    font-size: 16px;
+    font-size: var(--default-font-size);
     min-height: 20px;
-    padding: 5px 10px;
+    padding: 8px 10px;
     width: 100%;
 }
 

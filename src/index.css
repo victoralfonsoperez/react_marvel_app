@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+:root {
+  --white: #ffffff;
+  --light-gray: #f9f9f9;
+  --dark-gray: #56667a;
+  --red: #e63b2e;
+  --black: #222;
+  --image-size: 180px;
+  --roboto: 'Roboto', sans-serif;
+  --default-font-size: 14px;
+  --box-shadow: 3px 3px 4px 1px rgba(148,148,148,0.25);
+}
+
 body {
   margin: 0;
   padding: 0;

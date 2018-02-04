@@ -1,12 +1,14 @@
 .comic-card {
-    display: flex;
-    border: solid 1px red;
-    width: 400px;
-    padding: 10px;
-    background-color: white;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: flex-start;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-basis: 45%;
+    flex-wrap: wrap;
+    font-family: var(--roboto);
+    justify-content: space-between;
+    margin: var(--default-font-size);
+    padding: 10px;
 }
 
 .comic-image, 
@@ -15,12 +17,30 @@
 }
 
 .comic-image {
-    width: 180px;
-    height: 180px;
     border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    height: var(--image-size);
+    margin-left: -25px;
+    margin-top: -25px;
+    width: var(--image-size);
 }
 
 .comic-desc-container {
+    margin-top: -22px;
+    padding-left: var(--default-font-size);
     text-align: left;
-    padding-left: 12px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+p {
+    color: var(--dark-gray);
+    font-weight: 300;
+    font-size: 16px;
 }

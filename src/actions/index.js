@@ -1,11 +1,11 @@
-export const GET_ALL_COMICS = 'GET_ALL_COMICS'
+export const GET_ALL_CHARACTERS = 'GET_ALL_CHARACTERS'
 
-// ACTIONS FOR COMICS
+// ACTIONS FOR CHARACTERS
 
-// action creator to create an action to retrieve all comics from all categories
-export const getAllComics = comics => (
+// action creator to create an action to retrieve all characters
+export const getAllCharacters = characters => (
   {
-    type: GET_ALL_COMICS,
-    comics,
+    type: GET_ALL_CHARACTERS,
+    characters,
   }
 )

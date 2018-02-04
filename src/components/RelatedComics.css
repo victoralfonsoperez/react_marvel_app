@@ -1,0 +1,27 @@
+.related-comics {
+    color: var(--dark-gray);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--roboto);
+    margin: 0;
+    padding: 12px 0;
+}
+
+.related-comics li {
+    flex-basis: 50%;
+    font-weight: 300;
+    font-size: var(--default-font-size);
+    list-style: none;
+    margin-top: 8px;
+    padding-right: var(--default-font-size);
+    text-align: left;
+}
+
+h4 {
+    color: var(--dark-gray);
+    font-family: var(--roboto);
+    font-weight: 500;
+    font-size: 18px;
+    margin: var(--default-font-size) 0 0;
+    padding: 0;
+}
