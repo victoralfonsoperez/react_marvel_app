@@ -5,10 +5,13 @@
   "dependencies": {
     "axios": "^0.17.1",
     "md5": "^2.2.1",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-axios": "^2.0.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "^1.1.0"
+    "react-redux": "^5.0.6",
+    "react-scripts": "^1.1.0",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,6 +27,8 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.0",
-    "jest-cli": "^20.0.4"
+    "jest-cli": "^20.0.4",
+    "react-icons": "^2.2.7",
+    "redux-devtools-extension": "^2.13.2"
   }
 }
