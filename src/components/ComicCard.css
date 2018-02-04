@@ -1,0 +1,26 @@
+.comic-card {
+    display: flex;
+    border: solid 1px red;
+    width: 400px;
+    padding: 10px;
+    background-color: white;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.comic-image, 
+.comic-desc-container {
+    flex-basis: 50%;
+}
+
+.comic-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+.comic-desc-container {
+    text-align: left;
+    padding-left: 12px;
+}
