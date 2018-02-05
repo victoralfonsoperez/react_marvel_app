@@ -48,11 +48,12 @@
 @media (min-width: 700px) {
     .app-header {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: flex-start;
     }
 
     .search-container {
         align-self: center;
+        margin-left: 20%;
         width: 50%;
     }
 }

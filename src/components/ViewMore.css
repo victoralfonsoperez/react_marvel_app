@@ -3,7 +3,7 @@ a {
     color: var(--white);
     display: block;
     margin-top: var(--default-font-size);
-    padding: var(--default-font-size);
+    padding: 10px;
     text-decoration: none;
     width: fit-content;
 }

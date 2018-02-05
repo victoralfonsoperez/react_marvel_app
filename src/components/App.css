@@ -32,23 +32,28 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: var(--default-font-size) 0;
   width: 65%;
 }
 
 .aside-container {
   width: 35%;
+  background-color: #f2f2f2;
+  padding: var(--default-font-size) 0;
 }
 
-.characters-heading {
+.section-heading {
   align-items: center;
   display: flex;
+  margin-bottom: var(--default-font-size);
   padding: 0 var(--default-font-size);
   text-align: left;
-  margin-bottom: var(--default-font-size);
+  width: 100%;
 }
 
-.charactersLogo {
+.sectionLogo {
   height: 40px;
+  margin-right: var(--default-font-size);
   width: 40px;
 }
 
@@ -63,6 +68,6 @@ h1 {
 
 @media (min-width: 700px) {
   .App {
-    padding-top: 60px;
+    padding-top: 48px;
   }
 }

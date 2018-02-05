@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import RelatedComics from './RelatedComics'
 import ViewMore from './ViewMore'
 import './ComicCard.css'
@@ -27,6 +28,10 @@ class ComicCard extends Component {
       </div>
     )
   }
+}
+
+ComicCard.propTypes = {
+  comic: PropTypes.object.isRequired,
 }
 
 export default ComicCard
