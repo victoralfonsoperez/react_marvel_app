@@ -42,9 +42,13 @@ class App extends Component {
   }
 }
 
+App.defaultProps = {
+  characters: [],
+}
+
 App.propTypes = {
   getAllCharacters: PropTypes.func.isRequired,
-  characters: PropTypes.object.isRequired,
+  characters: PropTypes.array,
 }
 
 const mapStateToProps = ({ characters }) => (
