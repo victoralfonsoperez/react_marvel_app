@@ -37,6 +37,8 @@
 }
 
 .search-icon {
+    background: transparent;
+    border: none;
     color: #cccccc;
     position: absolute;
     right: 8px;

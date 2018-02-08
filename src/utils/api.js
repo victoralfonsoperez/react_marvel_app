@@ -21,3 +21,11 @@ export const getCharacters = () =>
   })
     .then(data => data.data)
     .catch(error => console.error(error))
+
+export const autocompleteList = value =>
+  axios.get(`${api}characters?nameStartsWith=${value}`, {
+    params,
+    headers,
+  })
+    .then(data => data.data)
+    .catch(error => console.error(error))

@@ -11,10 +11,15 @@ class ComicCard extends Component {
     const { comic } = this.props
     return (
       <div className="comic-card">
-        <img className="comic-image" src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt={comic.title} />
+        <img
+          className="comic-image"
+          src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+          alt={comic.title}
+        />
         <div className="comic-desc-container">
           <h2>{comic.name}</h2>
-          {comic.description && comic.description.length > MAX_LENGTH ?
+          {
+            comic.description && comic.description.length > MAX_LENGTH ?
                 (
                   <p>
                     {`${comic.description.substring(0, MAX_LENGTH)}...`}
