@@ -16,11 +16,11 @@ class App extends Component {
 
   componentDidMount() {
     getCharacters()
-      .then(characters => this.props.getAllCharacters(characters))
+      .then(characters => this.props.getAllCharacters(characters, true))
   }
 
   render() {
-    const { characters } = this.props
+    const { characters, ready } = this.props
     return (
       <div className="App">
         <Header />
@@ -28,9 +28,21 @@ class App extends Component {
           <article className="comics-container">
             <SectionHeading imageSrc={charactersLogo} title="Characters" />
             {
-          characters && characters.map(comic => (
+              ready === false && (
+                <div>loading...</div>
+              )
+            }
+            {
+          ready && characters && characters.map(comic => (
             <ComicCard key={comic.id} comic={comic} />
           ))
+        }
+            {
+          ready && characters && characters.length === 0 && (
+            <div className="no-results">
+              There are no results for this search
+            </div>
+          )
         }
           </article>
           <aside className="aside-container">
@@ -49,11 +61,14 @@ App.defaultProps = {
 App.propTypes = {
   getAllCharacters: PropTypes.func.isRequired,
   characters: PropTypes.array,
+  ready: PropTypes.bool.isRequired,
 }
 
-const mapStateToProps = ({ characters }) => (
+const mapStateToProps = ({ characters, newCharacters, ready }) => (
   {
     characters: characters && characters.data && characters.data.results,
+    newCharacters: newCharacters && newCharacters.data && newCharacters.data.results,
+    ready,
   }
 )
 

@@ -46,7 +46,6 @@
 }
 
 /*MEDIA QUERIES*/
-
 @media (min-width: 700px) {
     .app-header {
         flex-direction: row;

@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { bindActionCreators } from 'redux'
 import { FaSearch } from 'react-icons/lib/fa'
 import './Header.css'
 import { autocompleteList } from '../utils/api'
+import * as actions from '../actions'
 
 class Header extends Component {
   constructor(props) {
@@ -16,8 +20,7 @@ class Header extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     autocompleteList(this.state.value)
-      .then(data => console.log(data))
-      // set the response as a new state
+      .then(characters => this.props.fetchCharacters(characters, true))
   }
 
   render() {
@@ -26,7 +29,6 @@ class Header extends Component {
         <div className="logo">LOGO</div>
         <div className="search-container">
           <form onSubmit={this.handleSubmit}>
-            {/* TODO: create a form to handle the data sumbit */}
             <input
               className="search"
               type="text"
@@ -43,4 +45,18 @@ class Header extends Component {
   }
 }
 
-export default Header
+Header.propTypes = {
+  fetchCharacters: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = ({ characters }) => (
+  {
+    copyright: characters && characters.copyright,
+  }
+)
+
+const mapDispatchToProps = dispatch => (
+  bindActionCreators(actions, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
