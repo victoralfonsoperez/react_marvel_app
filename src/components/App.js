@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
+import { FaSpinner } from 'react-icons/lib/fa'
 import { getCharacters } from '../utils/api'
 import * as actions from '../actions'
 import Header from './Header'
@@ -9,6 +10,7 @@ import './App.css'
 import charactersLogo from '../assets/characters.png'
 import favouritesLogo from '../assets/favourites.png'
 import ComicCard from './ComicCard'
+import Footer from './Footer'
 import SectionHeading from './SectionHeading'
 
 class App extends Component {
@@ -29,7 +31,7 @@ class App extends Component {
             <SectionHeading imageSrc={charactersLogo} title="Characters" />
             {
               ready === false && (
-                <div>loading...</div>
+                <FaSpinner />
               )
             }
             {
@@ -49,6 +51,7 @@ class App extends Component {
             <SectionHeading imageSrc={favouritesLogo} title="My favourites" />
           </aside>
         </section>
+        <Footer />
       </div>
     )
   }
