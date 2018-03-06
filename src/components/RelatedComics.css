@@ -40,3 +40,11 @@ h4 {
     color: var(--red);
     text-decoration: underline;
 }
+
+.modal-content {
+    display: flex;
+}
+
+.modal-content img {
+    flex: 1;
+}
