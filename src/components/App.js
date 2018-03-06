@@ -13,7 +13,7 @@ import ComicCard from './ComicCard'
 import Footer from './Footer'
 import SectionHeading from './SectionHeading'
 
-class App extends Component {
+export class App extends Component {
   state = {}
 
   componentDidMount() {

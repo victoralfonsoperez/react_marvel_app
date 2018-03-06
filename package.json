@@ -2,8 +2,9 @@
   "name": "react_marvel_app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://victoralfonsoperez.github.io/react_marvel_app/",
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.0",
     "md5": "^2.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
@@ -11,24 +12,27 @@
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
     "react-redux": "^5.0.6",
-    "react-scripts": "^1.1.0",
-    "redux": "^3.7.2"
+    "react-scripts": "^1.1.1",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.17.0",
+    "eslint": "^4.18.2",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
-    "jest-cli": "^20.0.4",
-    "redux-devtools-extension": "^2.13.2"
+    "gh-pages": "^1.1.0",
+    "jest-cli": "^20.0.4"
   }
 }

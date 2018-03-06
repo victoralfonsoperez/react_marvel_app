@@ -29,3 +29,11 @@ export const autocompleteList = value =>
   })
     .then(data => data.data)
     .catch(error => console.error(error))
+
+export const fetchData = value =>
+  axios.get(value, {
+    params,
+    headers,
+  })
+    .then(data => data.data)
+    .catch(error => console.error(error))

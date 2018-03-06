@@ -11,6 +11,10 @@
     padding: 10px;
 }
 
+.comic-card:hover h2 {
+    color: var(--red);
+}
+
 .comic-image, 
 .comic-desc-container {
     flex-basis: 50%;

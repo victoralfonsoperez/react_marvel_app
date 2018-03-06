@@ -4,8 +4,8 @@
 
 .app-header {
     align-items: center;
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;

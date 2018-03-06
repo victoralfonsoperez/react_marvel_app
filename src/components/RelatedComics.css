@@ -14,7 +14,6 @@
     font-weight: 300;
     font-size: var(--default-font-size);
     list-style: none;
-    margin-top: 8px;
     padding-right: var(--default-font-size);
     text-align: left;
 }
@@ -26,4 +25,18 @@ h4 {
     font-size: 18px;
     margin: var(--default-font-size) 0 0;
     padding: 0;
+}
+
+.no-link {
+    background: transparent;
+    border: none;
+    color: var(--dark-gray);
+    margin-top: 0;
+    padding-left: 1.6em;
+}
+
+.no-link:hover {
+    background: url(../assets/link-arrow.png) no-repeat left center;
+    color: var(--red);
+    text-decoration: underline;
 }
