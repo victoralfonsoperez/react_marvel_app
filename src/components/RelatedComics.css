@@ -48,3 +48,9 @@ h4 {
 .modal-content img {
     flex: 1;
 }
+
+.modal-description {
+    display: flex;
+    flex-direction: column;
+    padding: var(--default-font-size);
+}

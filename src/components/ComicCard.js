@@ -20,13 +20,12 @@ class ComicCard extends Component {
           <h2>{comic.name}</h2>
           {
             comic.description && comic.description.length > MAX_LENGTH ?
-                (
-                  <p>
-                    {`${comic.description.substring(0, MAX_LENGTH)}...`}
-                    <ViewMore />
-                  </p>
-                ) :
-                  <p>{comic.description || 'No description'}</p>
+              <p>
+                {`${comic.description.substring(0, MAX_LENGTH)}...`}
+                <ViewMore />
+              </p>
+                 :
+              <p>{comic.description || 'No description'}</p>
             }
         </div>
         <RelatedComics comics={comic.comics} />
