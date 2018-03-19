@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import RelatedComics from './RelatedComics'
 import ViewMore from './ViewMore'
 import './ComicCard.css'
+import Image from './Image'
 
 const MAX_LENGTH = 85
 
@@ -11,11 +12,7 @@ class ComicCard extends Component {
     const { comic } = this.props
     return (
       <div className="comic-card">
-        <img
-          className="comic-image"
-          src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-          alt={comic.title}
-        />
+        <Image className="comic-image" {...comic.thumbnail} />
         <div className="comic-desc-container">
           <h2>{comic.name}</h2>
           {

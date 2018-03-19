@@ -1,22 +1,12 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Modal from 'react-modal'
-import { isArray } from 'lodash'
 import { FaSpinner } from 'react-icons/lib/fa'
 import './RelatedComics.css'
 import { fetchData } from '../utils/api'
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    padding: '20px',
-  },
-}
+import closeButton from '../assets/btn-close.png'
+import Image from './Image'
+import CustomButton from './CustomButton'
 
 class RelatedComics extends Component {
   constructor() {
@@ -69,7 +59,7 @@ class RelatedComics extends Component {
         </h4>
         <ul className="related-comics">
           {
-            isArray(comics.items) &&
+            comics.items &&
             comics.items.filter((i, index) => (index < relatedItemsQuantity))
              .map(i => (
                <li key={i.name}>
@@ -82,25 +72,33 @@ class RelatedComics extends Component {
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          style={customStyles}
           contentLabel="Example Modal"
           ariaHideApp={false}
+          className="modal"
+          overlayClassName="overlay"
         >
           {
-              !ready && (
-                <FaSpinner />
-              )
-            }
+            !ready && (<FaSpinner />)
+          }
+          <Fragment>
+            <button className="close" onClick={this.closeModal}><img src={closeButton} alt="close" /></button>
+          </Fragment>
           {
             ready && related && related.map(item => (
               <div className="modal-content" key={item.id}>
-                <img
-                  src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                  alt={item.title}
-                />
+                <Image {...item.thumbnail} />
                 <div className="modal-description">
-                  <h3>{item.title}</h3>
-                  <p>{item.description || 'no description available'}</p>
+                  <h3 className="issue-title">{item.title || 'No title available'}</h3>
+                  <p className="issue-description">{item.description || 'No description available'}</p>
+                </div>
+                <div className="modal-actions-container">
+                  <CustomButton text="Add to favourites" className="add-favorites-btn" />
+                  {
+                    item.prices && item.prices.filter(price => price.type === 'printPrice')
+                      .map(relatedComic => (
+                        <CustomButton key={relatedComic.type} {...relatedComic} className="buy-comic-btn" text="buy for" />
+                      ))
+                  }
                 </div>
               </div>
             ))

@@ -35,22 +35,71 @@ h4 {
     padding-left: 1.6em;
 }
 
-.no-link:hover {
+.no-link:hover,
+.no-link:active,
+.no-link:focus {
     background: url(../assets/link-arrow.png) no-repeat left center;
     color: var(--red);
     text-decoration: underline;
 }
 
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: rgb(255, 255, 255);
+    max-width: 680px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(125, 125, 125, 0.85);
+}
+
 .modal-content {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .modal-content img {
     flex: 1;
+    flex-basis: 50%;
+    max-width: 50%;
 }
 
 .modal-description {
     display: flex;
+    flex-basis: 50%;
     flex-direction: column;
-    padding: var(--default-font-size);
+    padding: 0 var(--default-font-size);
+}
+
+.close {
+    cursor: pointer;
+    border: none;
+}
+
+.issue-title {
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.modal-actions-container {
+    display: flex;
+    flex: 1;
 }

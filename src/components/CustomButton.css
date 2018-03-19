@@ -1,0 +1,25 @@
+.add-favorites-btn,
+.buy-comic-btn {
+    -webkit-appearance: none;
+    padding: 2em var(--default-font-size);
+    border-radius: 0;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 3em;
+    flex: 1;
+    cursor: pointer;
+}
+
+.add-favorites-btn {
+    background-color: rgba(var(--dark-gray), 0.7);
+    color: var(--black);
+    background: url(../assets/btn-favourites-default.png) no-repeat 2em center;
+}
+
+.buy-comic-btn {
+    color: var(--red);
+    background: url(../assets/shopping-cart-primary.png) no-repeat 2em center;
+    background-color: #dcdcdc;
+}

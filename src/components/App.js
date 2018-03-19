@@ -30,7 +30,7 @@ export class App extends Component {
           <article className="comics-container">
             <SectionHeading imageSrc={charactersLogo} title="Characters" />
             {
-              ready === false && (
+              !ready && (
                 <FaSpinner />
               )
             }
